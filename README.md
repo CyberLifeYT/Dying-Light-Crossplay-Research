@@ -627,3 +627,74 @@ No working crossplay solution is currently claimed or guaranteed. The purpose of
 The objective is not to assume that crossplay can be made to work at any cost. The objective is to investigate the technical barriers carefully, publish what is learned, and determine whether a safe, reproducible, and technically realistic solution exists.
 
 Every verified finding helps move that goal forward — including findings that rule out a proposed approach.
+
+---
+
+## Latest Findings (2026-10-22) — Phased Console Observation and Traffic Capture
+
+### Bottom line
+
+- The Xbox Series X build of *Dying Light 1* **does contact Epic Online Services** — `api.epicgames.dev` and the EOS RTC signaling host were observed while the game was running.
+- The console **also** uses Xbox Live services (`sessiondirectory.xboxlive.com`) and Techland's live service (`pls.dyinglightgame.com`).
+- A 44,302-frame packet capture of an active console session showed gameplay traffic going to **Microsoft Xbox Live infrastructure on UDP port 7844** (plus TCP/443), with **no high-volume UDP flow to a non-Microsoft peer**.
+
+### Game-attributable DNS (phased observer)
+
+| Class | Hostname | First seen | Meaning |
+|---|---|---|---|
+| EPIC | `api.epicgames.dev` | PH0/PH1 | EOS platform API |
+| EPIC | `signaling-service-prod.euw1.live.rtcp.on.epicgames.com` | PH0 | EOS RTC signaling (voice) |
+| TECH | `pls.dyinglightgame.com` | PH1 | Techland PLS live service |
+| XBOX | `sessiondirectory.xboxlive.com` | PH0 | Xbox Live session directory |
+
+> Caveat: several of these names are also resolved by the Xbox OS/dashboard services, so phase attribution alone is not conclusive. They are reported together with the traffic capture rather than as proof of the game's session backend.
+
+### Gameplay transport (pktmon capture)
+
+| Flow | Protocol | Interpretation |
+|---|---|---|
+| `… ↔ 198.41.200.233:7844` | UDP | Xbox Live relay infrastructure |
+| `… ↔ 198.41.192.227:7844` | UDP | Xbox Live relay infrastructure |
+| Multiple hosts on TCP/443 | TCP | Microsoft/Akamai HTTPS services |
+
+No direct peer-to-peer UDP flow to a non-Microsoft address was observed during gameplay.
+
+### Feasibility assessment
+
+| Question | Status |
+|---|---|
+| Does the Xbox build use EOS at all? | **Yes** (EOS API + EOS RTC signaling resolved) |
+| Is the EOS ProductId/SandboxId the same as PC? | **Unverified** — PC values are `ec72fbf877284381a51d0d19d5358df9` / `2c42520d342a46d7a6e0cfa77b4715de` |
+| Is session discovery EOS Lobby or Xbox Live? | **Mixed evidence** — both appear |
+| Is gameplay peer-to-peer? | **No** — observed Microsoft relay (UDP 7844 / TCP 443) |
+| Is the console patchable? | **No** — closed platform |
+
+The Microsoft relay and the closed console platform remain the hard blockers. EOS usage on the console is a positive signal for a shared platform, but it is not sufficient on its own.
+
+### Repository layout
+
+```
+docs/        Reverse-engineering notes and assessments
+scripts/     DNS observer, phase report, traffic triage, LAN tools
+evidence/    Raw console DNS logs and the pktmon capture
+analysis/    Extracted EOS imports, decompilation excerpts, protocol strings
+```
+
+### Tool quick start
+
+```powershell
+# 1. Observe which names the console resolves, phase by phase
+#    (right-click -> Run as administrator)
+scripts\run_xbox_dns_phased.cmd
+
+# 2. Analyse the phase log
+python scripts\dl_phase_report.py evidence\xbox_phased.log
+
+# 3. Capture and triage gameplay traffic
+scripts\capture_xbox.cmd
+python scripts\dl_session_probe.py --pcap evidence\xbox_trace.pcapng
+```
+
+### Status
+
+Crossplay is **not achieved**. This repository documents the verified findings, the measurement tools, and the remaining unknowns.

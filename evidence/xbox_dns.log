@@ -1,6 +1,61 @@
-# Evidence file: xbox_dns.log
-# This file is very large (console DNS observation log).
-# The full log is available locally at: C:\Users\cyber\AppData\Local\Temp\opencode\xbox_dns.log
-# Key finding from this log:
-# - xbox_dns.log: Console resolves api.epicgames.dev, pls.dyinglightgame.com, sessiondirectory.xboxlive.com
-# - xbox_phased.log: Phased observation showing EPIC/TECH/XBOX resolutions by phase (PH0-PH4)
+2026-10-22T13:47:01.331	192.168.0.195	UDP	xncsi.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:01.350	192.168.0.195	UDP	www.bing.com.	28	OTHER	ok
+2026-10-22T13:47:01.366	192.168.0.195	UDP	www.bing.com.	1	OTHER	ok
+2026-10-22T13:47:01.383	192.168.0.195	UDP	www.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:47:01.399	192.168.0.195	UDP	www.microsoft.com.	1	MSFT-GEN	ok
+2026-10-22T13:47:01.415	192.168.0.195	UDP	www.msftncsi.com.	1	OTHER	ok
+2026-10-22T13:47:01.431	192.168.0.195	UDP	xncsi.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:01.447	192.168.0.195	UDP	www.msftncsi.com.	28	OTHER	ok
+2026-10-22T13:47:02.568	192.168.0.195	UDP	www.xbox.com.	28	XBOX	ok
+2026-10-22T13:47:02.582	192.168.0.195	UDP	www.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:02.655	192.168.0.195	UDP	xnotify.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:07.368	192.168.0.195	UDP	licensing.mp.microsoft.com.	1	MSFT-GEN	ok
+2026-10-22T13:47:07.386	192.168.0.195	UDP	licensing.mp.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:47:09.839	192.168.0.195	UDP	instance.mgt.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:09.860	192.168.0.195	UDP	instance.mgt.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:12.793	192.168.0.195	UDP	privacy.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:12.807	192.168.0.195	UDP	peoplehub.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:12.833	192.168.0.195	UDP	rta.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:12.849	192.168.0.195	UDP	privacy.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:12.863	192.168.0.195	UDP	rta.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:12.877	192.168.0.195	UDP	peoplehub.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:12.890	192.168.0.195	UDP	api.epicgames.dev.	28	EPIC	ok
+2026-10-22T13:47:12.906	192.168.0.195	UDP	api.epicgames.dev.	1	EPIC	ok
+2026-10-22T13:47:13.029	192.168.0.195	UDP	social.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:13.056	192.168.0.195	UDP	social.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:13.656	192.168.0.195	UDP	userpresence.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:13.670	192.168.0.195	UDP	userpresence.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:14.194	192.168.0.195	UDP	profile.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:14.211	192.168.0.195	UDP	profile.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:20.055	192.168.0.195	UDP	licensing.mp.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:47:20.979	192.168.0.195	UDP	update.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:20.994	192.168.0.195	UDP	update.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:22.439	192.168.0.195	UDP	inventory.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:22.459	192.168.0.195	UDP	inventory.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:34.249	192.168.0.195	UDP	titlestorage.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:34.263	192.168.0.195	UDP	titlestorage.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:35.480	192.168.0.195	UDP	pls.dyinglightgame.com.	1	TECH	ok
+2026-10-22T13:47:35.503	192.168.0.195	UDP	pls.dyinglightgame.com.	28	TECH	ok
+2026-10-22T13:47:37.188	192.168.0.195	UDP	fs.microsoft.com.	1	MSFT-GEN	ok
+2026-10-22T13:47:37.219	192.168.0.195	UDP	fs.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:47:47.713	192.168.0.195	UDP	v20.events.data.microsoft.com.	1	MSFT-GEN	ok
+2026-10-22T13:47:47.728	192.168.0.195	UDP	v20.events.data.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:47:49.083	192.168.0.195	UDP	assets1.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:49.099	192.168.0.195	UDP	assets-srvs.xboxlive.com.	5	XBOX	ok
+2026-10-22T13:47:49.117	192.168.0.195	UDP	assets1.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:47:49.149	192.168.0.195	UDP	assets-srvs-net.trafficmanager.net.	33	MSFT-GEN	ok
+2026-10-22T13:47:53.384	192.168.0.195	UDP	signaling-service-prod.euw1.live.rtcp.on.epicgames.com.	1	EPIC	ok
+2026-10-22T13:47:53.400	192.168.0.195	UDP	signaling-service-prod.euw1.live.rtcp.on.epicgames.com.	28	EPIC	ok
+2026-10-22T13:47:53.443	192.168.0.195	UDP	sessiondirectory.xboxlive.com.	1	XBOX	ok
+2026-10-22T13:47:53.460	192.168.0.195	UDP	sessiondirectory.xboxlive.com.	28	XBOX	ok
+2026-10-22T13:48:29.925	192.168.0.195	UDP	v20.events.data.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:48:35.242	192.168.0.195	UDP	v20.events.data.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:48:42.130	192.168.0.195	UDP	assets1.xboxlive.com.edgesuite.net.	1	XBOX	ok
+2026-10-22T13:48:42.165	192.168.0.195	UDP	assets1.xboxlive.com.edgesuite.net.	28	XBOX	ok
+2026-10-22T13:48:43.271	192.168.0.195	UDP	v20.events.data.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:48:51.768	192.168.0.195	UDP	v20.events.data.microsoft.com.	1	MSFT-GEN	ok
+2026-10-22T13:48:51.783	192.168.0.195	UDP	v20.events.data.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:48:59.296	192.168.0.195	UDP	v20.events.data.microsoft.com.	28	MSFT-GEN	ok
+2026-10-22T13:49:02.747	192.168.0.195	UDP	fg.microsoft.map.fastly.net.	1	OTHER	ok
+2026-10-22T13:49:02.763	192.168.0.195	UDP	fg.microsoft.map.fastly.net.	28	OTHER	ok
+2026-10-22T13:49:04.280	192.168.0.195	UDP	v20.events.data.microsoft.com.	28	MSFT-GEN	ok

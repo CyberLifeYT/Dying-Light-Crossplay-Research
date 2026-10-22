@@ -33,7 +33,7 @@ netsh advfirewall firewall delete rule name="DL-XboxDNS-In-TCP" >nul 2>&1
 
 echo.
 echo === Your LAN IPs (use the one on the SAME network as the Xbox) ===
-powershell -NoProfile -Command "Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $$_.IPAddress -notlike '127.*' -and $$_.IPAddress -notlike '169.254*' } | ForEach-Object { '    {0}   ({1})' -f $$_.IPAddress, $$_.InterfaceAlias }"
+powershell -NoProfile -Command "Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.IPAddress -notlike '127.*' -and $_.IPAddress -notlike '169.254*' } | ForEach-Object { '    {0}   ({1})' -f $_.IPAddress, $_.InterfaceAlias }"
 
 echo.
 echo === Starting phase-marked observer on UDP/53 + TCP/53 ===

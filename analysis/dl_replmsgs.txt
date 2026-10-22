@@ -1,0 +1,75 @@
+# program=engine_x64_rwdi.dll
+STR	1807e3ca0	Authorization	PLS-Authorization
+REF	1806cb330	FUN_1806cb330
+REF	NONE	1807f45e8
+STR	1808af040	Authorization	Unauthorized to send message with Authorization token '%s'\n
+REF	1806cac10	FUN_1806cac10
+STR	1808b3818	ReplicationInvalidVersion	ReplicationInvalidVersion
+REF	1806faa90	FUN_1806faa90
+STR	1808b3838	ReplicationNoMaster	ReplicationNoMaster
+REF	1806faa90	FUN_1806faa90
+STR	1808b3850	ReplicationNoInitialized	ReplicationNoInitialized
+REF	1806faa90	FUN_1806faa90
+STR	1808b3870	ReplicationInvalidData	ReplicationInvalidData
+REF	1806faa90	FUN_1806faa90
+STR	1808b3e00	Authorization	SteamAuthNoAuthorization
+REF	1806faa90	FUN_1806faa90
+STR	1808b48d0	DataReceived	Net::Repl::CReplicatorsManager::CreateDataReceivedCommand
+REF	180701d20	FUN_180701d20
+STR	1808b4940	DataUnpacked	Net::Repl::CReplicatorsManager::CreateDataUnpackedCommand
+REF	1807028d0	FUN_1807028d0
+STR	1808b5c98	TargetJoined	TargetJoined
+REF	1807184b0	FUN_1807184b0
+STR	1808b5ca8	DataReceived	DataReceived
+REF	1807184b0	FUN_1807184b0
+STR	1808b5cb8	TargetIdSet	TargetIdSet
+REF	1807184b0	FUN_1807184b0
+STR	1808b5cc8	TargetLeft	TargetLeft
+REF	1807184b0	FUN_1807184b0
+STR	1808b5cd8	DataToPack	DataToPack
+REF	1807184b0	FUN_1807184b0
+STR	1808b5ce8	LocalIdChanged	LocalIdChanged
+REF	1807184b0	FUN_1807184b0
+STR	1808b5cf8	IdRequest	IdRequest
+REF	180718550	FUN_180718550
+STR	1808b5d08	DataUnpacked	DataUnpacked
+REF	1807184b0	FUN_1807184b0
+STR	1808b5d18	BecomingMaster	BecomingMaster
+REF	180718440	FUN_180718440
+STR	1808b5d48	AdvertizingMaster	AdvertizingMaster
+REF	180718440	FUN_180718440
+STR	1808b5d80	ClientLeft	ClientLeft
+REF	1807184b0	FUN_1807184b0
+STR	1808b5d90	ClientJoined	ClientJoined
+REF	1807184b0	FUN_1807184b0
+STR	1808b5da0	DisconnectInvalidVersion	DisconnectInvalidVersion
+REF	180718550	FUN_180718550
+STR	1808b5dc0	AwareOfMaster	AwareOfMaster
+REF	180718550	FUN_180718550
+STR	1808b5de0	DisconnectInvalidData	DisconnectInvalidData
+REF	180718550	FUN_180718550
+STR	1808b5e38	Introduction	Introduction
+REF	180718550	FUN_180718550
+STR	1808b5e48	IdReply	IdReply
+REF	180718550	FUN_180718550
+STR	1808b5e50	Authorization	Authorization
+REF	180718550	FUN_180718550
+STR	1808b5e60	Acceptance	Acceptance
+REF	180718550	FUN_180718550
+STR	1808b5e70	AgreeMaster	AgreeMaster
+REF	180718550	FUN_180718550
+STR	1808b5e80	WannaBeMaster	WannaBeMaster
+REF	180718550	FUN_180718550
+STR	1808b5e90	BecameMaster	BecameMaster
+REF	180718550	FUN_180718550
+STR	1808b5ea0	AgreeMaster	DisagreeMaster
+REF	180718550	FUN_180718550
+STR	1809dd1f3	BecameMaster	?OnLobbyBecameMaster@IGame@@UEAAXXZ
+REF	NONE	18099f918
+STR	1809de888	LocalIdChanged	?OnReplLocalIdChanged@IGame@@UEAAXGG@Z
+REF	NONE	18099faf4
+STR	1809de95d	TargetJoined	?OnReplTargetJoined@IGame@@UEAAXGI@Z
+REF	NONE	18099fb08
+STR	1809de982	TargetLeft	?OnReplTargetLeft@IGame@@UEAAXGI@Z
+REF	NONE	18099fb0c
+# STRING_COUNT	36

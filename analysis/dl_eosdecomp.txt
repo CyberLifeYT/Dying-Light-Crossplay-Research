@@ -1,0 +1,284 @@
+//==== FUNC EOS_P2P_SendPacket @ 180352c00
+
+undefined8 EOS_CustomInvites_SetCustomInvite(undefined8 *param_1,longlong param_2)
+
+{
+  undefined8 uVar1;
+  
+                    /* 0x352c00  170  EOS_CustomInvites_SetCustomInvite
+                       0x352c00  330  EOS_Metrics_BeginPlayerSession
+                       0x352c00  359  EOS_P2P_SendPacket */
+  if ((param_1 != (undefined8 *)0x0) && (param_2 != 0)) {
+                    /* WARNING: Could not recover jumptable at 0x000180352c10. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (*(code *)**(undefined8 **)*param_1)();
+    return uVar1;
+  }
+  return 10;
+}
+
+
+
+//==== FUNC EOS_P2P_ReceivePacket @ 1803540c0
+
+undefined8
+EOS_P2P_ReceivePacket
+          (undefined8 *param_1,longlong param_2,longlong param_3,longlong param_4,longlong param_5,
+          longlong param_6,longlong param_7)
+
+{
+  undefined8 uVar1;
+  
+                    /* 0x3540c0  353  EOS_P2P_ReceivePacket */
+  if ((((param_1 != (undefined8 *)0x0) && (param_2 != 0)) && (param_3 != 0)) &&
+     (((param_4 != 0 && (param_5 != 0)) && ((param_6 != 0 && (param_7 != 0)))))) {
+                    /* WARNING: Could not recover jumptable at 0x00018035410d. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (**(code **)(*(longlong *)*param_1 + 0x10))
+                      ((longlong *)*param_1,param_2,param_3,param_4);
+    return uVar1;
+  }
+  return 10;
+}
+
+
+
+//==== FUNC EOS_P2P_AcceptConnection @ 1803520d0
+
+undefined8 EOS_AntiCheatClient_EndSession(undefined8 *param_1,longlong param_2)
+
+{
+  undefined8 uVar1;
+  
+                    /* 0x3520d0  34  EOS_AntiCheatClient_EndSession
+                       0x3520d0  71  EOS_AntiCheatServer_SetClientDetails
+                       0x3520d0  338  EOS_P2P_AcceptConnection
+                       0x3520d0  469  EOS_RTCAudio_SetAudioOutputSettings */
+  if ((param_1 != (undefined8 *)0x0) && (param_2 != 0)) {
+                    /* WARNING: Could not recover jumptable at 0x0001803520e0. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (**(code **)(*(longlong *)*param_1 + 0x58))();
+    return uVar1;
+  }
+  return 10;
+}
+
+
+
+//==== FUNC EOS_P2P_GetNATType @ 180351f60
+
+undefined8
+EOS_Achievements_CopyUnlockedAchievementByAchievementId
+          (undefined8 *param_1,longlong param_2,longlong param_3)
+
+{
+  undefined8 uVar1;
+  
+                    /* 0x351f60  9  EOS_Achievements_CopyUnlockedAchievementByAchievementId
+                       0x351f60  35  EOS_AntiCheatClient_GetProtectMessageOutputLength
+                       0x351f60  140  EOS_Connect_CopyProductUserInfo
+                       0x351f60  185  EOS_Ecom_CopyOfferByIndex
+                       0x351f60  347  EOS_P2P_GetNATType
+                       0x351f60  540  EOS_Sessions_CreateSessionSearch */
+  if (((param_1 != (undefined8 *)0x0) && (param_2 != 0)) && (param_3 != 0)) {
+                    /* WARNING: Could not recover jumptable at 0x000180351f75. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (**(code **)(*(longlong *)*param_1 + 0x78))();
+    return uVar1;
+  }
+  return 10;
+}
+
+
+
+//==== FUNC EOS_P2P_QueryNATType @ 1803541c0
+
+void EOS_P2P_QueryNATType(undefined8 *param_1,longlong param_2,undefined8 param_3,code *param_4)
+
+{
+  undefined8 local_28;
+  undefined8 local_20;
+  undefined8 local_18;
+  
+                    /* 0x3541c0  352  EOS_P2P_QueryNATType */
+  if (param_4 != (code *)0x0) {
+    if ((param_1 != (undefined8 *)0x0) && (param_2 != 0)) {
+      (**(code **)(*(longlong *)*param_1 + 0x70))();
+      return;
+    }
+    local_28 = 10;
+    local_18 = 0;
+    local_20 = param_3;
+    (*param_4)(&local_28);
+  }
+  return;
+}
+
+
+
+//==== FUNC EOS_Lobby_PromoteMember @ 180352900
+
+void EOS_Connect_QueryExternalAccountMappings
+               (undefined8 *param_1,longlong param_2,undefined8 param_3,code *param_4)
+
+{
+  undefined8 local_28;
+  undefined8 local_20;
+  undefined8 local_18;
+  
+                    /* 0x352900  154  EOS_Connect_QueryExternalAccountMappings
+                       0x352900  311  EOS_Lobby_PromoteMember */
+  if (param_4 != (code *)0x0) {
+    if ((param_1 != (undefined8 *)0x0) && (param_2 != 0)) {
+      (**(code **)(*(longlong *)*param_1 + 0x38))();
+      return;
+    }
+    local_28 = 10;
+    local_18 = 0;
+    local_20 = param_3;
+    (*param_4)(&local_28);
+  }
+  return;
+}
+
+
+
+//==== FUNC EOS_Lobby_CreateLobby @ 180353160
+
+void EOS_Friends_QueryFriends(undefined8 *param_1,longlong param_2,undefined8 param_3,code *param_4)
+
+{
+  undefined8 local_28;
+  undefined8 local_20;
+  undefined8 local_18;
+  
+                    /* 0x353160  220  EOS_Friends_QueryFriends
+                       0x353160  299  EOS_Lobby_CreateLobby
+                       0x353160  415  EOS_PlayerDataStorage_QueryFile
+                       0x353160  575  EOS_TitleStorage_QueryFile
+                       0x353160  592  EOS_UI_ShowFriends */
+  if (param_4 != (code *)0x0) {
+    if ((param_1 != (undefined8 *)0x0) && (param_2 != 0)) {
+      (*(code *)**(undefined8 **)*param_1)();
+      return;
+    }
+    local_28 = 10;
+    local_18 = 0;
+    local_20 = param_3;
+    (*param_4)(&local_28);
+  }
+  return;
+}
+
+
+
+//==== FUNC EOS_Lobby_JoinLobby @ 1803527c0
+
+void EOS_Connect_LinkAccount(undefined8 *param_1,longlong param_2,undefined8 param_3,code *param_4)
+
+{
+  undefined8 local_28;
+  undefined8 local_20;
+  undefined8 local_18;
+  
+                    /* 0x3527c0  152  EOS_Connect_LinkAccount
+                       0x3527c0  202  EOS_Ecom_QueryEntitlements
+                       0x3527c0  307  EOS_Lobby_JoinLobby */
+  if (param_4 != (code *)0x0) {
+    if ((param_1 != (undefined8 *)0x0) && (param_2 != 0)) {
+      (**(code **)(*(longlong *)*param_1 + 0x10))();
+      return;
+    }
+    local_28 = 10;
+    local_18 = 0;
+    local_20 = param_3;
+    (*param_4)(&local_28);
+  }
+  return;
+}
+
+
+
+//==== FUNC EOS_Platform_Create @ 18026ffc0
+
+longlong * EOS_Platform_Create(longlong param_1)
+
+{
+  int iVar1;
+  longlong *plVar2;
+  int *piVar3;
+  longlong *plVar4;
+  longlong *plVar5;
+  longlong lVar6;
+  longlong *plVar7;
+  longlong local_18;
+  longlong *local_10;
+  
+                    /* 0x26ffc0  364  EOS_Platform_Create */
+  piVar3 = (int *)FUN_18026df90();
+  if ((*piVar3 == 1) && (param_1 != 0)) {
+    FUN_18026fdc0(&local_18,piVar3,param_1);
+    lVar6 = local_18;
+    plVar5 = local_10;
+    plVar7 = (longlong *)0x0;
+    if ((local_18 != 0) &&
+       (plVar4 = (longlong *)(**(code **)(*DAT_1812ed8b0 + 0x10))(DAT_1812ed8b0,0x10,0),
+       plVar2 = local_10, plVar5 = local_10, plVar7 = (longlong *)0x0, plVar4 != (longlong *)0x0)) {
+      if (local_10 != (longlong *)0x0) {
+        LOCK();
+        *(int *)(local_10 + 1) = (int)local_10[1] + 1;
+        UNLOCK();
+        lVar6 = local_18;
+      }
+      *plVar4 = lVar6;
+      plVar4[1] = (longlong)local_10;
+      plVar7 = plVar4;
+      if (local_10 != (longlong *)0x0) {
+        LOCK();
+        *(int *)(local_10 + 1) = (int)local_10[1] + 1;
+        UNLOCK();
+        LOCK();
+        plVar4 = local_10 + 1;
+        lVar6 = *plVar4;
+        *(int *)plVar4 = (int)*plVar4 + -1;
+        UNLOCK();
+        if ((int)lVar6 == 1) {
+          (**(code **)*local_10)(local_10);
+          plVar5 = local_10;
+          LOCK();
+          piVar3 = (int *)((longlong)plVar2 + 0xc);
+          iVar1 = *piVar3;
+          *piVar3 = *piVar3 + -1;
+          UNLOCK();
+          if (iVar1 == 1) {
+            (**(code **)(*local_10 + 8))(local_10,1);
+          }
+        }
+      }
+    }
+    plVar2 = local_10;
+    if (plVar5 != (longlong *)0x0) {
+      LOCK();
+      plVar5 = plVar5 + 1;
+      lVar6 = *plVar5;
+      *(int *)plVar5 = (int)*plVar5 + -1;
+      UNLOCK();
+      if ((int)lVar6 == 1) {
+        (**(code **)*local_10)(local_10);
+        LOCK();
+        piVar3 = (int *)((longlong)plVar2 + 0xc);
+        iVar1 = *piVar3;
+        *piVar3 = *piVar3 + -1;
+        UNLOCK();
+        if (iVar1 == 1) {
+          (**(code **)(*local_10 + 8))(local_10,1);
+        }
+      }
+    }
+    return plVar7;
+  }
+  return (longlong *)0x0;
+}
+
+
+

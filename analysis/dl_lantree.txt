@@ -1,0 +1,261 @@
+//==== ROOT 1806a6340	FUN_1806a6340
+
+void FUN_1806a6340(longlong param_1,int *param_2,longlong *param_3)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  char cVar4;
+  longlong *plVar5;
+  undefined8 uVar6;
+  longlong lVar7;
+  void *pvVar8;
+  char *pcVar9;
+  uint uVar10;
+  uint uVar11;
+  ulonglong uVar12;
+  ulonglong uVar13;
+  void *pvVar14;
+  uint uVar15;
+  char *pcVar16;
+  void *pvVar17;
+  undefined4 uVar18;
+  void *pvVar19;
+  undefined1 local_res20 [8];
+  int local_1d8;
+  char local_1d4;
+  void *local_1d0;
+  uint local_1c8;
+  int local_1b8;
+  undefined4 local_1a8;
+  void *local_1a0;
+  undefined8 local_198;
+  undefined4 local_190;
+  undefined1 local_188 [80];
+  int local_138;
+  short local_134;
+  
+  if (DAT_180a3b8f8 == 0) {
+    return;
+  }
+  cVar4 = FUN_180681040();
+  if (cVar4 == '\0') {
+    return;
+  }
+  plVar5 = (longlong *)(**(code **)(*param_3 + 0xb0))(param_3);
+  lVar7 = *plVar5;
+  uVar6 = (**(code **)(*(longlong *)(param_1 + 0x20) + 0xb0))(param_1 + 0x20);
+  cVar4 = (**(code **)(lVar7 + 0xb8))(plVar5,uVar6);
+  if (cVar4 != '\0') {
+    return;
+  }
+  pcVar16 = "ScanId";
+  pvVar19 = (void *)0x0;
+  uVar18 = 0;
+  if ((char)param_2[8] != '\0') goto LAB_1806a64fb;
+  iVar2 = *param_2;
+  if (iVar2 == 0) {
+LAB_1806a64d4:
+    uVar10 = param_2[6];
+    if (3 < param_2[7] - uVar10) {
+      uVar18 = *(undefined4 *)((ulonglong)uVar10 + *(longlong *)(param_2 + 4));
+      param_2[6] = uVar10 + 4;
+      goto LAB_1806a64fb;
+    }
+  }
+  else {
+    if (iVar2 == 1) {
+      uVar10 = param_2[6];
+      if (param_2[7] - uVar10 < 4) {
+        *(undefined1 *)(param_2 + 8) = 1;
+        goto LAB_1806a64fb;
+      }
+      pcVar9 = "ScanId";
+      uVar11 = *(uint *)((ulonglong)uVar10 + *(longlong *)(param_2 + 4));
+      param_2[6] = uVar10 + 4;
+      cVar4 = 'S';
+      pvVar8 = pvVar19;
+      do {
+        pcVar9 = pcVar9 + 1;
+        uVar10 = (int)pvVar8 * 0x29 + (int)cVar4;
+        pvVar8 = (void *)(ulonglong)uVar10;
+        cVar4 = *pcVar9;
+      } while (cVar4 != '\0');
+      if (uVar11 != uVar10) {
+        *(undefined1 *)(param_2 + 8) = 1;
+        goto LAB_1806a64fb;
+      }
+      goto LAB_1806a64d4;
+    }
+    if (iVar2 == 2) {
+      uVar10 = param_2[6];
+      if (param_2[7] == uVar10) {
+        *(undefined1 *)(param_2 + 8) = 1;
+        goto LAB_1806a64fb;
+      }
+      uVar15 = uVar10 + 1;
+      uVar11 = param_2[7] - uVar15;
+      bVar1 = *(byte *)((ulonglong)uVar10 + *(longlong *)(param_2 + 4));
+      param_2[6] = uVar15;
+      uVar10 = (uint)bVar1;
+      if (uVar11 <= uVar10 && bVar1 != uVar11) {
+        *(undefined1 *)(param_2 + 8) = 1;
+        goto LAB_1806a64fb;
+      }
+      if (bVar1 != 0) {
+        memcpy(&local_138,(void *)((ulonglong)uVar15 + *(longlong *)(param_2 + 4)),(ulonglong)uVar10
+              );
+        param_2[6] = uVar15 + uVar10;
+      }
+      if (((uVar10 == 6) && (local_138 == 0x6e616353)) && (local_134 == 0x6449)) goto LAB_1806a64d4;
+    }
+  }
+  *(undefined1 *)(param_2 + 8) = 1;
+LAB_1806a64fb:
+  local_1a0 = (void *)0x0;
+  local_198 = 0;
+  local_190 = 0x27;
+  FUN_180680dd0(*(undefined8 *)(*(longlong *)(param_1 + 8) + 8),&local_1a0);
+  FUN_1806a4930(&local_1d8,1,0x43364457,1);
+  if ((DAT_180a3b8f8 == 0) || (*(longlong *)(DAT_180a3b8f8 + 0x408) == 0)) {
+    local_1a8 = 0;
+  }
+  else {
+    local_1a8 = *(undefined4 *)(*(longlong *)(DAT_180a3b8f8 + 0x408) + 0x1b4);
+  }
+  lVar7 = (**(code **)(**(longlong **)(*(longlong *)(param_1 + 8) + 8) + 0x1c0))();
+  iVar2 = local_1b8;
+  uVar3 = *(undefined4 *)(lVar7 + 0x4c);
+  if (local_1d8 != 0) {
+    if (local_1d8 == 1) {
+      cVar4 = 'S';
+      pvVar8 = pvVar19;
+      do {
+        pcVar16 = pcVar16 + 1;
+        uVar10 = (int)pvVar8 * 0x29 + (int)cVar4;
+        pvVar8 = (void *)(ulonglong)uVar10;
+        cVar4 = *pcVar16;
+      } while (cVar4 != '\0');
+      uVar12 = (ulonglong)local_1c8;
+      local_1b8 = local_1b8 + 4;
+      local_res20[0] = 0;
+      FUN_18009a280(&local_1d0,local_1c8 + 4,local_res20);
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+      }
+      *(uint *)(uVar12 + (longlong)local_1d0) = uVar10;
+    }
+    else if (local_1d8 == 2) {
+      uVar13 = (ulonglong)local_1c8;
+      local_res20[0] = 0;
+      local_1b8 = local_1b8 + 1;
+      FUN_18009a280(&local_1d0,local_1c8 + 1,local_res20);
+      uVar12 = (ulonglong)local_1c8;
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+      }
+      local_1b8 = local_1b8 + 6;
+      *(undefined1 *)(uVar13 + (longlong)local_1d0) = 6;
+      local_res20[0] = 0;
+      FUN_18009a280(&local_1d0,local_1c8 + 6,local_res20);
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+      }
+      *(undefined4 *)((longlong)local_1d0 + uVar12) = 0x6e616353;
+      *(undefined2 *)((undefined4 *)((longlong)local_1d0 + uVar12) + 1) = 0x6449;
+    }
+  }
+  uVar10 = local_1c8;
+  local_1b8 = iVar2 + 4;
+  local_res20[0] = 0;
+  FUN_18009a280(&local_1d0,local_1c8 + 4,local_res20);
+  iVar2 = local_1b8;
+  uVar12 = (ulonglong)local_1c8;
+  if (local_1d4 != '\0') {
+    *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+  }
+  *(undefined4 *)((ulonglong)uVar10 + (longlong)local_1d0) = uVar18;
+  if (local_1d8 != 0) {
+    if (local_1d8 == 1) {
+      pcVar16 = "GamePort";
+      cVar4 = 'G';
+      pvVar8 = pvVar19;
+      do {
+        pcVar16 = pcVar16 + 1;
+        uVar10 = (int)pvVar8 * 0x29 + (int)cVar4;
+        pvVar8 = (void *)(ulonglong)uVar10;
+        cVar4 = *pcVar16;
+      } while (cVar4 != '\0');
+      local_1b8 = local_1b8 + 4;
+      local_res20[0] = 0;
+      FUN_18009a280(&local_1d0,local_1c8 + 4,local_res20);
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+      }
+      *(uint *)(uVar12 + (longlong)local_1d0) = uVar10;
+      uVar12 = (ulonglong)local_1c8;
+    }
+    else if (local_1d8 == 2) {
+      local_res20[0] = 0;
+      local_1b8 = local_1b8 + 1;
+      FUN_18009a280(&local_1d0,local_1c8 + 1,local_res20);
+      uVar13 = (ulonglong)local_1c8;
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+      }
+      local_1b8 = local_1b8 + 8;
+      *(undefined1 *)(uVar12 + (longlong)local_1d0) = 8;
+      local_res20[0] = 0;
+      FUN_18009a280(&local_1d0,local_1c8 + 8,local_res20);
+      uVar12 = (ulonglong)local_1c8;
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+      }
+      builtin_strncpy((char *)(uVar13 + (longlong)local_1d0),"GamePort",8);
+    }
+  }
+  local_1b8 = iVar2 + 4;
+  local_res20[0] = 0;
+  FUN_18009a280(&local_1d0,(int)uVar12 + 4,local_res20);
+  iVar2 = local_1b8;
+  uVar13 = (ulonglong)local_1c8;
+  if (local_1d4 != '\0') {
+    *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+  }
+  *(undefined4 *)(uVar12 + (longlong)local_1d0) = uVar3;
+  if (local_1d8 != 0) {
+    if (local_1d8 == 1) {
+      pcVar16 = "SerialId";
+      cVar4 = 'S';
+      pvVar8 = pvVar19;
+      do {
+        pcVar16 = pcVar16 + 1;
+        uVar10 = (int)pvVar8 * 0x29 + (int)cVar4;
+        pvVar8 = (void *)(ulonglong)uVar10;
+        cVar4 = *pcVar16;
+      } while (cVar4 != '\0');
+      local_1b8 = local_1b8 + 4;
+      local_res20[0] = 0;
+      FUN_18009a280(&local_1d0,local_1c8 + 4,local_res20);
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+      }
+      *(uint *)(uVar13 + (longlong)local_1d0) = uVar10;
+      uVar13 = (ulonglong)local_1c8;
+    }
+    else if (local_1d8 == 2) {
+      local_res20[0] = 0;
+      local_1b8 = local_1b8 + 1;
+      FUN_18009a280(&local_1d0,local_1c8 + 1,local_res20);
+      uVar12 = (ulonglong)local_1c8;
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)local_1d0 + 1) = local_1c8;
+      }
+      local_1b8 = local_1b8 + 8;
+      *(undefined1 *)(uVar13 + (longlong)local_1d0) = 8;
+      local_res20[0] = 0;
+      FUN_18009a280(&local_1d0,local_1c8 + 8,local_res20);
+      uVar13 = (ulonglong)local_1c8;
+      if (local_1d4 != '\0') {
+        *(uint *)((longlong)loca

@@ -1,0 +1,149 @@
+﻿IMPORT EOSSDK-Win64-Shipping.dll (148)
+    EOS_ProductUserId_IsValid
+    
+    
+    
+    EOS_ProductUserId_ToString
+    
+    EOS_Shutdown
+    
+    
+    
+    EOS_LobbySearch_SetLobbyId
+    
+    
+    
+    
+    
+    
+    EOS_Platform_GetConnectInterface
+    
+    
+    
+    
+    
+    EOS_Platform_GetFriendsInterface
+    EOS_LobbySearch_Find
+    EOS_LobbyDetails_CopyInfo
+    EOS_LobbyDetails_GetMemberCount
+    EOS_LobbyDetails_GetLobbyOwner
+    EOS_LobbyDetails_GetMemberByIndex
+    
+    EOS_LobbyDetails_CopyMemberAttributeByKey
+    EOS_P2P_CloseConnection
+    EOS_P2P_CloseConnections
+    EOS_Presence_HasPresence
+    EOS_Presence_Info_Release
+    EOS_Presence_CopyPresence
+    EOS_Presence_CreatePresenceModification
+    EOS_PresenceModification_Release
+    EOS_Presence_QueryPresence
+    EOS_Presence_SetPresence
+    EOS_Presence_AddNotifyOnPresenceChanged
+    EOS_Presence_RemoveNotifyOnPresenceChanged
+    EOS_Platform_GetPresenceInterface
+    
+    
+    
+    
+    
+    
+    
+    EOS_Platform_GetAuthInterface
+    EOS_Platform_Create
+    EOS_Platform_Release
+    EOS_P2P_AcceptConnection
+    EOS_P2P_GetNextReceivedPacketSize
+    EOS_P2P_SendPacket
+    EOS_P2P_ReceivePacket
+    EOS_P2P_AddNotifyPeerConnectionClosed
+    EOS_P2P_AddNotifyPeerConnectionRequest
+    EOS_P2P_RemoveNotifyPeerConnectionClosed
+    EOS_P2P_RemoveNotifyPeerConnectionRequest
+    EOS_P2P_GetNATType
+    EOS_P2P_QueryNATType
+    EOS_Platform_GetP2PInterface
+    EOS_PresenceModification_SetData
+    EOS_PresenceModification_DeleteData
+    EOS_UserInfo_CopyUserInfo
+    EOS_UserInfo_QueryUserInfo
+    EOS_Platform_GetUserInfoInterface
+    EOS_UI_AddNotifyDisplaySettingsUpdated
+    EOS_UI_RemoveNotifyDisplaySettingsUpdated
+    EOS_Platform_GetUIInterface
+    EOS_RTC_GetAudioInterface
+    EOS_Platform_GetRTCInterface
+    EOS_RTC_BlockParticipant
+    EOS_RTC_AddNotifyParticipantStatusChanged
+    EOS_RTC_RemoveNotifyParticipantStatusChanged
+    EOS_RTCAudio_GetAudioInputDevicesCount
+    EOS_RTCAudio_GetAudioInputDeviceByIndex
+    EOS_RTCAudio_SetAudioInputSettings
+    EOS_RTCAudio_UpdateSending
+    EOS_RTCAudio_UpdateReceiving
+    EOS_RTCAudio_AddNotifyAudioBeforeSend
+    EOS_RTCAudio_RemoveNotifyAudioBeforeSend
+    EOS_RTCAudio_AddNotifyAudioBeforeRender
+    EOS_RTCAudio_RemoveNotifyAudioBeforeRender
+    
+    
+    
+    
+    
+    
+    
+    EOS_Platform_GetLeaderboardsInterface
+    EOS_Stats_IngestStat
+    EOS_Platform_GetStatsInterface
+    EOS_Platform_Tick
+    EOS_Platform_CheckForLauncherAndRestart
+    EOS_ProductUserId_FromString
+    EOS_LobbyDetails_Info_Release
+    
+    EOS_UserInfo_Release
+    EOS_Lobby_Attribute_Release
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    EOS_Platform_GetAchievementsInterface
+    EOS_Lobby_AddNotifyLobbyInviteReceived
+    EOS_Lobby_AddNotifyLobbyMemberStatusReceived
+    EOS_Lobby_AddNotifyLobbyUpdateReceived
+    EOS_Lobby_AddNotifyRTCRoomConnectionChanged
+    EOS_Lobby_RemoveNotifyRTCRoomConnectionChanged
+    EOS_Lobby_RemoveNotifyLobbyInviteReceived
+    EOS_Lobby_RemoveNotifyLobbyMemberStatusReceived
+    EOS_Lobby_RemoveNotifyLobbyUpdateReceived
+    EOS_Lobby_CopyLobbyDetailsHandle
+    EOS_LobbyDetails_Release
+    EOS_Lobby_CopyLobbyDetailsHandleByInviteId
+    EOS_Lobby_CreateLobbySearch
+    EOS_LobbySearch_Release
+    EOS_Lobby_UpdateLobbyModification
+    EOS_LobbyModification_Release
+    EOS_Lobby_CreateLobby
+    EOS_Lobby_DestroyLobby
+    EOS_LobbySearch_SetParameter
+    EOS_LobbySearch_GetSearchResultCount
+    EOS_LobbySearch_CopySearchResultByIndex
+    EOS_Platform_GetLobbyInterface
+    EOS_Lobby_GetRTCRoomName
+    EOS_Lobby_UpdateLobby
+    EOS_Lobby_SendInvite
+    EOS_Lobby_RejectInvite
+    EOS_Lobby_PromoteMember
+    EOS_Lobby_LeaveLobby
+    EOS_Lobby_JoinLobby
+    
+    EOS_Platform_GetEcomInterface
+    EOS_LobbyModification_AddAttribute
+    EOS_LobbyModification_AddMemberAttribute
+    EOS_LobbyModification_SetPermissionLevel
+    EOS_LobbyModification_SetInvitesAllowed
+    EOS_LobbyModification_SetBucketId
