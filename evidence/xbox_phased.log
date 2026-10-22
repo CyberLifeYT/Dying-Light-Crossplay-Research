@@ -1,0 +1,6 @@
+# Evidence file: xbox_phased.log
+# This file is very large (console DNS observation log).
+# The full log is available locally at: C:\Users\cyber\AppData\Local\Temp\opencode\xbox_phased.log
+# Key finding from this log:
+# - xbox_dns.log: Console resolves api.epicgames.dev, pls.dyinglightgame.com, sessiondirectory.xboxlive.com
+# - xbox_phased.log: Phased observation showing EPIC/TECH/XBOX resolutions by phase (PH0-PH4)
