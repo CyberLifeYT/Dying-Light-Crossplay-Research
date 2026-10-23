@@ -2,7 +2,7 @@
 
 **Investigating cross-platform co-op between Epic Games Store PC and Xbox One / Xbox Series X|S**
 
-> **Project status: Experimental research — crossplay not yet achieved or confirmed.**
+> **Project status (2026-10-23): Concluded — PC (Epic) ↔ Xbox co-op is not achievable with the unmodified Xbox game.** See [Conclusion (2026-10-23)](#conclusion-2026-10-23) and [`docs/research-2026-10-23/CONCLUSION.md`](docs/research-2026-10-23/CONCLUSION.md).
 
 This project investigates whether it is technically possible to enable cooperative multiplayer between the PC version of *Dying Light* distributed through the Epic Games Store and the Xbox One version of the game running on Xbox One or Xbox Series X|S.
 
@@ -93,6 +93,9 @@ The following table separates established observations from unresolved questions
 | Network observations | Some potentially relevant service domains have been observed, but their roles are not yet fully established. |
 | PC-to-Xbox connection | Not demonstrated. |
 | Working crossplay method | None confirmed. |
+| Join handshake (2026-10-23) | **Verified:** joining requires an exact, ordered match of build fingerprints (`REPL_VERSION`, RTTI IDs/CRCs/sizes CRCs, multiplayer data CRC, per-file CRCs). |
+| Versions (2026-10-23) | PC Epic 1.55.0.0 (`MP_Game_Version` 15500); Xbox reports 1.7.0.8. |
+| Overall (2026-10-23) | **Not achievable** under current constraints — see the conclusion section. |
 
 **Important:** The presence of a function name or string does not prove that the corresponding code path is used during normal gameplay. Static analysis provides leads that must be confirmed through control-flow analysis, runtime observation, or reproducible testing.
 
@@ -632,6 +635,8 @@ Every verified finding helps move that goal forward — including findings that 
 
 ## Latest Findings (2026-10-22) — Phased Console Observation and Traffic Capture
 
+> **Correction (2026-10-23):** the 2026-10-22 capture did **not** contain console gameplay traffic. Re-analysis of `xbox_trace.pcapng` shows only 18 flows involving the console (192.168.0.195), all DNS to the PC plus multicast — the PC is not on the console's network path. The `198.41.x.x:7844` flows were the PC's own traffic (that range belongs to Cloudflare, not Xbox Live). The "gameplay goes to Xbox Live relays on UDP 7844" and "Is gameplay peer-to-peer? No" rows below are therefore **withdrawn**. Also, PH0 of that phased run was not a clean baseline (Dying Light was likely in Quick Resume). The EOS-at-launch observation was later confirmed with a clean baseline (see below).
+
 ### Bottom line
 
 - The Xbox Series X build of *Dying Light 1* **does contact Epic Online Services** — `api.epicgames.dev` and the EOS RTC signaling host were observed while the game was running.
@@ -698,3 +703,65 @@ python scripts\dl_session_probe.py --pcap evidence\xbox_trace.pcapng
 ### Status
 
 Crossplay is **not achieved**. This repository documents the verified findings, the measurement tools, and the remaining unknowns.
+
+---
+
+## Conclusion (2026-10-23)
+
+**Answer: PC (Epic) ↔ Xbox co-op cannot be made to work with the unmodified Xbox game and the access available to this project.** The decisive obstacle is the game's own join handshake, which requires both players to run layout-identical builds. Full write-up: [`docs/research-2026-10-23/CONCLUSION.md`](docs/research-2026-10-23/CONCLUSION.md).
+
+### How PC co-op actually works (verified from the binary and read-only runtime logging)
+
+```
+Epic launcher exchange code → EOS Auth → EOS Connect (credential type EPIC)
+→ EOS lobby: BucketId "Epic", XLAST-schema attributes (MP_Game_Version=15500, MP_Progress, MP_DlcArea, …)
+→ search: NO platform/bucket filter; MP_Game_Version == 15500 + mode/progress filters  → Steam + Epic lobbies returned
+→ client check: found game accepted only if version is 15500–15599
+→ join → EOS P2P (socket named by lobby id, unreliable packets, game-level reliability)
+→ Net::Repl IdRequest: exact ordered match of verify list
+     REPL_VERSION=5, RTTI IDS CRC, RTTI CRCS CRC, RTTI SIZES CRC, data_crc, per-file/quest CRCs
+→ replicated gameplay
+```
+
+### Key evidence
+
+| Finding | Label |
+|---|---|
+| Online play = EOS lobbies + EOS P2P; lobby layers `CLobby → CLobbyCrossPlatform → CLobbyEpic` (RTTI class map) | Verified |
+| PC cross-store play works by not filtering on store/platform (searches returned "Epic" and "Steam" lobbies) | Verified (runtime) |
+| Lobby keys are Xbox Live **XLAST** properties from the game's `data/spa/game.gameconfig` (e.g. `0x10000012` = `MP_Game_Version`, `0x2000003b` = `MP_Host_Xuid`) | Verified |
+| Version gate: search `MP_Game_Version == 15500`, client accepts 15500–15599 | Verified |
+| Join handshake requires identical, ordered fingerprints including class-size/layout CRCs and multiplayer data CRC | Verified (static) |
+| Xbox Dying Light contacts `api.epicgames.dev` on game launch (clean baseline has none) | Strong inference |
+| Whether the Xbox build uses EOS **lobbies**, and in which deployment | Unknown |
+| A separately built Xbox build (1.7.0.8) produces different layout/data fingerprints than PC 1.55 | Strong inference |
+
+### Routes
+
+| Route | Verdict |
+|---|---|
+| A — existing services (EOS) | Ruled out in practice: version gates, then the layout-fingerprint handshake |
+| B — modify the PC build | Ruled out: can relax PC filters, but can't make the PC's replicated object layout match a different build; spoofing fingerprints would only admit corrupt state |
+| C — LAN | Ruled out for crossplay: PC LAN (raw UDP, "C6DW" discovery) uses the same handshake; Xbox shows no LAN option |
+| D — Xbox Dev Mode / port | Ruled out: retail games don't run in Dev Mode; a port is a separate multi-year engine-reconstruction project |
+| E — relay / protocol bridge | Ruled out: the incompatibility is in game-state serialization, not transport |
+| DNS redirection | Observation tool only |
+
+### Corrections to earlier notes
+- "Xbox ret-stubs prove there's no Xbox code" — overstated (the same empty function is shared by 40+ callbacks).
+- `CreateScanner` types are 0 = LAN, 1 = EOS, 2 = both (earlier notes had them reversed).
+- LAN first byte is a header-format selector (0–2), not the message type; `0x43364457` is the FourCC "C6DW", not "WD6C".
+- Observed EOS P2P gameplay packets are unreliable-unordered (the game handles reliability), not "reliable=1".
+- The 2026-10-22 capture did not contain console gameplay traffic (see the correction above).
+
+### Nearest feasible alternatives
+1. Play on the same platform family: PC ↔ PC across Epic, Steam and GOG works today; Xbox ↔ Xbox works on Xbox Live.
+2. Ask Techland — only the developer can ship matched builds or console crossplay.
+
+### New material in this update
+```
+docs/research-2026-10-23/   Conclusion, feasibility, function analysis, attribute map, experiments E1–E8, decision log, open questions
+scripts/2026-10-23/         Read-only Ghidra scripts (XrefDecomp, LobbyMap), read-only EOS logger v2 (Frida) + attach runner,
+                            phase-marked Xbox DNS observer v2 (+ RUN_XBOX_DNS.cmd launcher)
+```
+Not published on purpose: decompiled game code, extracted game data files, raw runtime logs (identifiers), and EOS client credentials embedded in the game.
