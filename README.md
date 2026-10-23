@@ -635,7 +635,7 @@ Every verified finding helps move that goal forward — including findings that 
 
 ## Latest Findings (2026-10-22) — Phased Console Observation and Traffic Capture
 
-> **Correction (2026-10-23):** the 2026-10-22 capture did **not** contain console gameplay traffic. Re-analysis of `xbox_trace.pcapng` shows only 18 flows involving the console (192.168.0.195), all DNS to the PC plus multicast — the PC is not on the console's network path. The `198.41.x.x:7844` flows were the PC's own traffic (that range belongs to Cloudflare, not Xbox Live). The "gameplay goes to Xbox Live relays on UDP 7844" and "Is gameplay peer-to-peer? No" rows below are therefore **withdrawn**. Also, PH0 of that phased run was not a clean baseline (Dying Light was likely in Quick Resume). The EOS-at-launch observation was later confirmed with a clean baseline (see below).
+> **Correction (2026-10-23):** the 2026-10-22 capture did **not** contain console gameplay traffic. Re-analysis of `xbox_trace.pcapng` shows only 18 flows involving the console (192.168.x.xxx), all DNS to the PC plus multicast — the PC is not on the console's network path. The `198.41.x.x:7844` flows were the PC's own traffic (that range belongs to Cloudflare, not Xbox Live). The "gameplay goes to Xbox Live relays on UDP 7844" and "Is gameplay peer-to-peer? No" rows below are therefore **withdrawn**. Also, PH0 of that phased run was not a clean baseline (Dying Light was likely in Quick Resume). The EOS-at-launch observation was later confirmed with a clean baseline (see below).
 
 ### Bottom line
 
